@@ -22,8 +22,10 @@ You can check more detailed abi type definitions [here](../core/src/lib/abi/inde
 For now, contract methods can have only 1 object parameter. In other cases, abi might be generated incorrectly. Example: 
 
 ```ts
-public some_method({ someValue }:{ someValue: string }) {...}
+@call({})
+public some_method({ someValue }:{ someValue: string }) {/*...*/}
 
-// But NOT: 
-public some_method(someValue: string) {...}
+/* But NOT: */
+@call({})
+public some_method(someValue: string) {/*...*/}
 ```
